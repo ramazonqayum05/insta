@@ -7,7 +7,6 @@
 
 .container {
     max-width: 500px;
-    border: 1px solid black;
     margin: auto;
     text-align: center;
     padding: 50px 20px 0 20px;
@@ -28,7 +27,7 @@ select {
 input {
     width: 100%;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
     outline: none;
     border: 1px solid #999;
     margin-bottom: 10px;
@@ -55,12 +54,12 @@ a {
     color: blue;
     border-radius: 20px;
     border: 1px solid blue;
-    margin-top: 80px;
+    margin-top: 130px;
 }
 
 i {
     color: #434242;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1px;
     margin: 20px;
 }
