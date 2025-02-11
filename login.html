@@ -34,7 +34,7 @@ const firebaseConfig = {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 alert("Tizimga muvaffaqiyatli kirdingiz!");
                 console.log("Foydalanuvchi:", userCredential.user);
-                window.location.href = "https://js2-ramazons-projects-915f6019.vercel.app";
+                // window.location.href = "https://js2-ramazons-projects-915f6019.vercel.app";
             } catch (error) {
                 alert("Xatolik: " + error.message);
             }
