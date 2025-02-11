@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Authentication</title>
+    <link rel="stylesheet" href="login.css">
+    <script type="module">
+ 
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+      
+const firebaseConfig = {
+  apiKey: "AIzaSyA9135jgoerMVa_MQ0JkPid364aPIaAr9E",
+  authDomain: "chat-ff9c7.firebaseapp.com",
+  databaseURL: "https://chat-ff9c7-default-rtdb.firebaseio.com",
+  projectId: "chat-ff9c7",
+  storageBucket: "chat-ff9c7.firebasestorage.app",
+  messagingSenderId: "261792238950",
+  appId: "1:261792238950:web:d9302bbeb00272b66fcca7",
+  measurementId: "G-YYGJVYMEMR"
+};
+
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.login = async function() {
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                alert("Tizimga muvaffaqiyatli kirdingiz!");
+                console.log("Foydalanuvchi:", userCredential.user);
+                window.location.href = "https://js2-ramazons-projects-915f6019.vercel.app";
+            } catch (error) {
+                alert("Xatolik: " + error.message);
+            }
+        }
+
+  
+        window.logout = async function() {
+            try {
+                await signOut(auth);
+                alert("Tizimdan chiqdingiz!");
+            } catch (error) {
+                alert("Xatolik: " + error.message);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Tizimga kirish</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Parol">
+        <button class="kirish" onclick="login()">Kirish</button>
+        <a href="register.html">Yangi akkaunt ochish</a>
+    
+        <button class="chiqish" onclick="logout()">Chiqish</button>
+    </div>
+</body>
+</html>
